@@ -1,12 +1,7 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}Instance Config{% endblock %}
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
-
-{% block content %}
+{% block body %}
+  {{nav.top.render(id='top-navbar')}}
   <h1>Hello, Bootstrap</h1>
 {% endblock %}

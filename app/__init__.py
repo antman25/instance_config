@@ -2,11 +2,20 @@ import logging
 from logging.handlers import RotatingFileHandler
 import os
 from flask_bootstrap import Bootstrap
+from flask_nav import Nav
+from flask_nav.elements import *
 from flask import Flask, request, current_app
 from config import Config
 
-
+nav = Nav()
 bootstrap = Bootstrap()
+
+nav.register_element(
+    'top',
+    Navbar(
+        View('Instance Config', 'main.index')
+    )
+)
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -14,6 +23,7 @@ def create_app(config_class=Config):
 
 
     bootstrap.init_app(app)
+    nav.init_app(app)
 
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
