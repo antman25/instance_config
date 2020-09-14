@@ -25,13 +25,12 @@ COPY instance_config.py server.py config.py boot.sh ./
 RUN chmod a+x boot.sh
 
 ENV FLASK_APP instance_config
+ENV LOG_TO_STDOUT true
 RUN chown -R testapp:testapp ./
 USER testapp
 
 EXPOSE 5000
 
 ENTRYPOINT ["./boot.sh"]
-#ENTRYPOINT ["/bin/sleep", "60"]
-#ENTRYPOINT ["/usr/bin/python3", "./server.py"]
-#CMD . venv/bin/activate && exec python3 server.py
+
 

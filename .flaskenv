@@ -1,0 +1,1 @@
+FLASK_APP=instance_config.py
