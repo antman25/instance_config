@@ -25,7 +25,7 @@ COPY instance_config.py server.py config.py boot.sh ./
 RUN chmod a+x boot.sh
 
 ENV FLASK_APP instance_config
-ENV LOG_TO_STDOUT true
+ENV LOG_TO_STDOUT True
 RUN chown -R testapp:testapp ./
 USER testapp
 
