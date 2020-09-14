@@ -9,4 +9,4 @@ from app.main import bp
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/main', methods=['GET', 'POST'])
 def index():
-    return "Hello World!\n"
+    return render_template('index.html')
